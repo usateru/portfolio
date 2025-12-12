@@ -66,6 +66,20 @@
 - API 設計・実装
 - サーバ運用  
 
+sequenceDiagram
+    participant User as ユーザー
+    participant MailServer as メールサーバ(IMAP)
+    participant Camel as Apache Camel
+    participant API as Web API
+
+    User->>MailServer: 空メール送信
+    MailServer-->>Camel: メール受信（監視）
+    Camel->>Camel: FROMアドレス抽出
+    Camel->>API: JSONでリクエスト
+    API-->>Camel: 結果返却
+    Camel->>MailServer: 自動返信メール送信（必要な場合）
+
+
 ---
 
 ## メルマガ送信プログラム
@@ -84,6 +98,17 @@
 ### 役割
 - API 設計・実装
 - サーバ運用  
+
+flowchart TD
+    A[オペレーターがZIPをメール送信] --> B[Apache Camelがメール受信]
+    B --> C[ZIPを解凍]
+    C --> D[データ検証]
+    D -->|OK| E[実行ディレクトリへ移動]
+    D -->|NG| F[エラー通知]
+    E --> G[指定時刻まで待機]
+    G --> H[SendGrid/Mailgunへ送信]
+    H --> I[送信結果ログ保存]
+
 
 ---
 
