@@ -66,6 +66,7 @@
 - API 設計・実装
 - サーバ運用  
 
+```mermaid
 sequenceDiagram
     participant User as ユーザー
     participant MailServer as メールサーバ(IMAP)
@@ -78,7 +79,7 @@ sequenceDiagram
     Camel->>API: JSONでリクエスト
     API-->>Camel: 結果返却
     Camel->>MailServer: 自動返信メール送信（必要な場合）
-
+```
 
 ---
 
@@ -97,8 +98,9 @@ sequenceDiagram
 
 ### 役割
 - API 設計・実装
-- サーバ運用  
+- サーバ運用
 
+```mermaid
 flowchart TD
     A[オペレーターがZIPをメール送信] --> B[Apache Camelがメール受信]
     B --> C[ZIPを解凍]
@@ -108,7 +110,7 @@ flowchart TD
     E --> G[指定時刻まで待機]
     G --> H[SendGrid/Mailgunへ送信]
     H --> I[送信結果ログ保存]
-
+```
 
 ---
 
