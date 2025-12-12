@@ -1,4 +1,4 @@
-# Usami Teruo
+# [Usami Teruo](about.md)
 
 フルスタック寄りの Web エンジニア／バックエンドエンジニア。  
 既存システムの改善・保守運用、API 開発、Linux サーバ構築・運用を中心に  
@@ -41,6 +41,3 @@
 → 詳細は [projects](projects.md) を参照。
 
 ---
-
-## 📬 Contact
-GitHub Issues またはプロフィールの公開メールからご連絡ください。
