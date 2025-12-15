@@ -33,6 +33,7 @@ Linuxサーバ環境の設計・構築・運用にも強みがあり、冗長化
 - MySQL / MariaDB レプリケーション構築  
 - VPSでの運用（さくらインターネット、KAGOYA）  
 - 仮想環境構築（KVM, VirtualBox, Vagrant, Docker)
+- 監視・運用: Zabbix（サーバ監視、リソース監視、障害検知）
 
 ---
 
